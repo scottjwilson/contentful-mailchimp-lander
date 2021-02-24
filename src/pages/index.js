@@ -2,7 +2,7 @@ import React from "react"
 import { Layout } from "../layout"
 import { Hero } from "../components/Hero"
 import { Profile } from "../components/Profile"
-import Optin from "../components/Optin"
+import { Optin } from "../components/Optin"
 const IndexPage = ({ data }) => {
   const {
     allContentfulLink: { nodes: links },

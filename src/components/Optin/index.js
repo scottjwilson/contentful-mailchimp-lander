@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
-import { Container, Row, Col } from "react-grid-system"
-import styled from "styled-components"
+import { Wrapper, StyledContainer, Sub } from "./Styles"
+import { Row, Col } from "react-grid-system"
+
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
-const Optin = () => {
+export const Optin = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [message, setMessage] = useState()
@@ -30,7 +31,6 @@ const Optin = () => {
       navigate("/thankyou/")
     }
   }
-
   return (
     <Wrapper>
       <StyledContainer>
@@ -65,50 +65,3 @@ const Optin = () => {
     </Wrapper>
   )
 }
-
-const Wrapper = styled.div`
-  background-color: var(--theme-bg-color);
-  margin: 2rem 0;
-  color: #ffffff;
-  padding: 1.5rem 0;
-  border-radius: 14px;
-`
-
-const StyledContainer = styled(Container)`
-  // margin-top: 2rem;
-  // text-align: center;
-
-  form {
-    margin: 0;
-  }
-  input {
-    color: white;
-    margin: 0.5rem 0;
-    border-radius: 4px;
-    padding: 0.5rem;
-    width: 100%;
-    background: transparent;
-    border: 2px solid var(--border-color);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-`
-
-const Sub = styled.button`
-  text-align: center;
-  width: 100%;
-  margin: 0.5rem 0;
-  border-radius: 4px;
-  padding: 0.5rem;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  background-color: rgba(216, 0, 35, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: rgba(216, 0, 35, 0.9);
-  }
-`
-
-export default Optin
